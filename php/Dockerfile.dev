@@ -12,13 +12,5 @@ RUN set -xe && \
       --with-jpeg-dir=/usr/include/ && \
     docker-php-ext-install -j$(nproc) gd && \
     printf "\n" | pecl install APCu && \
-    docker-php-ext-enable apcu.so && \
-    curl -sS https://getcomposer.org/installer | \
-        php -- --install-dir=/usr/local/bin --filename=composer
-
-COPY ./humhub/composer.json /var/www/html/
-COPY ./humhub/composer.lock /var/www/html/
-
-WORKDIR /var/www/html
-RUN /usr/local/bin/composer install
+    docker-php-ext-enable apcu.so
 

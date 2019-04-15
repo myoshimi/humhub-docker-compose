@@ -23,3 +23,9 @@ services:
       - ${PWD}/humhub:/var/www/html
     ports:
       - 80:80
+  composer:
+    image: composer:1.8.5
+    restart: "no"
+    command: install --ignore-platform-reqs --no-scripts
+    volumes:
+      - ${PWD}/humhub:/app

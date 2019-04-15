@@ -48,6 +48,8 @@ docker-compose -f docker-compose-dev build
 docker-compose -f docker-compose-dev up -d
 ```
 
+You can access elgg web service after stopping ```composer``` container.
+
 # Non-volatile Volume
 
 * Directory ```volumes/db``` is mounted for mariadb container
